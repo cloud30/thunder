@@ -1,0 +1,32 @@
+<?thunder xhtml ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Hello Navigation</title>
+    </head>
+	<body>
+		<composite name="helloTutorial">
+			<UINavigationController toolbarHidden="YES" navigationBarHidden="NO">
+                <BUXNavigationSegue>
+                    <UINavigationItem.navigationItem title="Hello Navigation">
+	                    <UIBarButtonItem.backBarButtonItem title="Home"/>
+	                </UINavigationItem.navigationItem>
+                    <UIView>
+		                <UIButton centerY="200" height="50" centerX="_parent" width="200" title="Choose Red" titleColor="orange" tintColor="red" _onTouchUpInside="red.present()"/>
+		                <UIButton centerY="300" height="50" centerX="_parent" width="200" title="Choose Blue" titleColor="lightblue" tintColor="blue" _onTouchUpInside="blue.present()"/>
+		            </UIView>
+                </BUXNavigationSegue>
+
+                <BUXNavigationSegue id="red">
+                    <UINavigationItem.navigationItem title="Painful Truth"/>
+                    <UIView backgroundColor="red"/>
+                </BUXNavigationSegue>
+
+                <BUXNavigationSegue id="blue">
+                    <UINavigationItem.navigationItem title="Blissful Ignorance"/>
+                    <UIView backgroundColor="blue"/>
+                </BUXNavigationSegue>
+
+			</UINavigationController>
+		</composite>
+	</body>
+</html>

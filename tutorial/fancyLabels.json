@@ -1,0 +1,13 @@
+{
+  "stdLabel": {
+    "font": "{PartyLetPlain, 16}",
+    "textColor": "LimeGreen",
+    "backgroundColor": "#D6F5D6",
+    "shadowColor": "rgba(0,30,0,0.5)",
+    "shadowOffset": "{0,1}",
+    "adjustsFontSizeToFitWidth": "YES"
+  },
+  "bigFont": {
+    "font": "{PartyLetPlain, 24}"
+  }
+}

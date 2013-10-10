@@ -1,0 +1,18 @@
+<?thunder xhtml ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Country Table</title>
+    </head>
+	<body>
+		<composite name="countryTable" cfg="countries.json">
+			<UIView backgroundColor="white" automaticallyAdjustsScrollViewInsets="NO">
+            	<UITableView top="_topGuide.bottom" bottom="_bottomGuide.top" left="0" width="_parent" style="Plain" showSection="NO" model-bind="cfg:countries">
+		            <UITableViewCell.defaultCellTmpl style="Value2">
+	                	<UILabel.textLabel text-bind="code" textAlignment="center"/>
+	                	<UILabel.detailTextLabel text-bind="name" adjustsFontSizeToFitWidth="YES"/>
+		            </UITableViewCell.defaultCellTmpl>
+	            </UITableView>
+			</UIView>
+		</composite>
+	</body>
+</html>

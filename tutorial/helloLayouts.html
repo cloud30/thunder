@@ -1,0 +1,16 @@
+<?thunder xhtml ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Hello Layouts!</title>
+    </head>
+	<body>
+		<composite name="helloLayouts">
+			<UIView backgroundColor="lightblue">
+				<UIView id="brow" centerX="_parent" width="75%" top="100" height="10" backgroundColor="red"/> 
+				<UILabel id="helloLabel" left="brow + 10" top="brow.bottom + 10" text="Hello World" backgroundColor="lightblue"/>
+				<UIView left="helloLabel.right + 30" right="brow" top="helloLabel" bottom="helloLabel" backgroundColor="green"/>
+				<UIView centerX="brow" width="50" top="helloLabel.bottom" height="brow.width * 0.5" backgroundColor="yellow"/> 
+			</UIView>
+		</composite>
+	</body>
+</html>

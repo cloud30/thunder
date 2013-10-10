@@ -1,0 +1,52 @@
+<?thunder xhtml ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Thunder Tutorial</title>
+        <script type="text/javascript">//<![CDATA[
+            function _onLoad(url) {
+                $().init({
+                    helloJohn: {
+                        updateName: function (name) {
+                            $('nameTextField').doAction('resignFirstResponder');
+                            $('message').setProperty('text', 'Hello ' + name.toUpperCase() + '!');
+                        }
+                    }
+                });
+                $().imports(['hello', 'helloFancy', 'helloStyles', 'helloLayouts', 'helloTable', 'countryTable', 'helloEvents', 'helloJohn']);
+            };
+        //]]></script>
+    </head>
+	<body>
+		<composite name="helloTutorial">
+			<UINavigationController toolbarHidden="YES" navigationBarHidden="NO">
+                <BUXNavigationSegue>
+                    <UINavigationItem.navigationItem title="Hello Tutorial">
+	                    <UIBarButtonItem.backBarButtonItem title="Home"/>
+	                </UINavigationItem.navigationItem>
+                    <UITableView style="Plain" showSection="NO">
+		                <UITableViewCell.defaultCellTmpl accessoryType="DisclosureIndicator" detailTitle-bind="detailTitle" compName-bind="compName" _onDidSelect="tutorial.presentWithModel($sender)">
+		                	<UILabel.textLabel text-bind="detailTitle"/>
+		                </UITableViewCell.defaultCellTmpl>
+		                <json.model>
+		                	[
+		                		{"detailTitle":"Hello World!", "compName":"hello"},
+		                		{"detailTitle":"Hello Fancy!", "compName":"helloFancy"},
+		                		{"detailTitle":"Hello Styles!", "compName":"helloStyles"},
+		                		{"detailTitle":"Hello Layouts!", "compName":"helloLayouts"},
+		                		{"detailTitle":"Hello Table!", "compName":"helloTable"},
+		                		{"detailTitle":"Country Table", "compName":"countryTable"},
+		                		{"detailTitle":"Hello Events", "compName":"helloEvents"},
+		                		{"detailTitle":"Hello John", "compName":"helloJohn"}
+		                	]
+		                </json.model>
+		            </UITableView>
+                </BUXNavigationSegue>
+
+                <BUXNavigationSegue id="tutorial" reuse="NO">
+                    <UINavigationItem.navigationItem title-bind="detailTitle"/>
+                    <UIView composite-bind="compName" backgroundColor="white"/>
+                </BUXNavigationSegue>
+			</UINavigationController>
+		</composite>
+	</body>
+</html>
