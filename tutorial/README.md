@@ -22,7 +22,7 @@ Without further ado, let's start with a quick hello world. Just create a file na
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/hello.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/hello.html)
 
 A green screen with a hello world label should be displayed.
 
@@ -50,7 +50,7 @@ Let's refine the label above with additional properties. Create a file named _he
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/helloFancy.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/helloFancy.html)
 
 In order to provide the most accurate presentation of your application mockup, _Thunder_ displays it in full screen without adding any additional control or toolbar. In order to return to the initial screen so that you can reload the file or load a new one, you can either shake the device or send it temporarily in the background (e.g. double-click the home button and select _Thunder_ again).
 
@@ -92,7 +92,7 @@ and a corresponding _helloStyles.html_:
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/helloStyles.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/helloStyles.html)
 
 As you can see, the `style` attribute of the `composite` tag specifies the json file to be used for styling. Any element can use the `styleClass` attribute to specify one or more space-separated class names to be applied in order.
 
@@ -119,7 +119,7 @@ In the following example we create a container view (which, being the root view,
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/helloLayouts.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/helloLayouts.html)
 
 When using layouts, 2 constraints per axis are normally needed so that size and position are not ambiguous. Some components (like labels and images) provide an intrinsic size. In that case, a single position constraint per axis is sufficient. This is especially useful for labels, which may vary in size when localized. For a list of constraint attributes and full syntax check out the [Layout Reference]().
 
@@ -171,7 +171,7 @@ Tables are a fundamental design element as they provide scrollable lists used to
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/helloTable.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/helloTable.html)
 
 This example is pretty trivial, but one thing to notice is the `<UILabel.textLabel>` tag. As we have seen earlier, normally properties can be set using HTML attributes using simple strings. However, when properties are complex, it would be impractical trying to reduce them to a single string. So in those cases we use a child element whose tag name includes the property type and property name separated by a dot. For example, since `UITableViewCell` has a `textLabel` property of type `UILabel` we can use the tag `<UILabel.textLabel>` to define its properties like any other `UILabel`.
 
@@ -220,7 +220,7 @@ In this case we may want to create a table with a template for each cell and the
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/countryTable.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/countryTable.html)
 
 Similarly to the `style` property we saw before, the `cfg` property in the composite tag refers to a json file in the same location as the html file. Instead of providing each table cell individually as children, we use the `model` property and bind it to the countries array. Each element of the array is then bound to the template speficied by the `defaultCellTmpl` property. In this case, the data of country is bound to the cell's labels.
 This is just scratching the surface of the power of table views. For more advanced features check out our [TableView Reference]().
@@ -254,7 +254,7 @@ Every component has the ability to fire _events_ to notify us of meaningful acti
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/helloEvents.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/helloEvents.html)
 
 If only one action needs to be triggered, the event handler can be specified as an attribute as in `_onTouchUpInside="rootView.setProperty(backgroundColor,blue)"`. If multiple actions are needed, the tag format above has to be used. Actions will be performed in the order specified.
 Every event normally carries a payload that can be referenced with the `$` prefix. The `$sender` event payload is usually provided and it represents the element where the event has happened (in this case the `UIButton` itself). Just like in HTML we can leverage custom properties to carry useful additional payload and in this case with the `msg` custom property.
@@ -292,7 +292,7 @@ Sometimes event handlers need to do more than just invoking actions. Since _Thun
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/helloJohn.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/helloJohn.html)
 
 As you can see, if the action names starts with `-` then a JS function is invoked instead of and action.
 
@@ -334,7 +334,7 @@ Until now our entire application had only one page but in reality we probably wa
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/helloTutorial.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/helloTutorial.html)
 
 A `UINavigationController` should have one or more `BUXNavigationSegue` children, the first of which will be the root of the stack and be displayed automatically. Any other segue can be presented invoking the present() or presentWithModel() actions. See [Event Reference]() and [Action Reference]() for more information about events and actions.
 
@@ -395,7 +395,7 @@ Using the concepts covered so far, we can combine all these sample files togethe
 	</body>
 </html>
 ```
-[try it!](thunder:https://raw.git.com/cloud30/thunder/master/tutorial/helloTutorial.html)
+[try it!](https://raw.git.com/cloud30/thunder/master/tutorial/helloTutorial.html)
 
 Every component has a special property called `composite` that allows to load its contents from another file or URL. This allows to decompose and test experiences in smaller chunks that are easier to work with and reuse.
 
