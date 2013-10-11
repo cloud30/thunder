@@ -6,12 +6,12 @@
 	<body>
 		<composite name="helloEvents">
             <UIView id="rootView" backgroundColor="ivory">
-                <UIButton centerY="100" height="50" centerX="_parent" width="200" title="Choose Red" titleColor="orange" tintColor="red" msg="Painful Truth">
+                <UIButton centerY="150" height="50" centerX="_parent" width="200" title="Choose Red" titleColor="orange" tintColor="red" msg="Painful Truth">
                     <_onTouchUpInside do="rootView.setProperty(backgroundColor,red)"/>
                     <_onTouchUpInside do="message.setProperty(text,$sender.msg)"/>
                 </UIButton>
 
-                <UIButton centerY="200" height="50" centerX="_parent" width="200" title="Choose Blue" titleColor="lightblue" tintColor="blue" msg="Blissful Ignorance">
+                <UIButton centerY="250" height="50" centerX="_parent" width="200" title="Choose Blue" titleColor="lightblue" tintColor="blue" msg="Blissful Ignorance">
                     <_onTouchUpInside do="rootView.setProperty(backgroundColor,blue)"/>
                     <_onTouchUpInside do="message.setProperty(text,$sender.msg)"/>
                 </UIButton>
