@@ -1,6 +1,6 @@
 ## Getting Started
 
-_Thunder_ is an iOS [app](http://itunes.apple.com) that allows to create pixel-perfect mockups of iOS applications using simple HTML-like markup. All you need is a text editor and a web server.
+_Thunder_ is an iOS [app](https://itunes.apple.com/us/app/ishopzine/id725023836?mt=8) that allows to create pixel-perfect mockups of iOS applications using simple HTML-like markup. All you need is a text editor and a web server.
 
 
 ## Hello World
@@ -307,7 +307,7 @@ Until now our entire application had only one page but in reality we probably wa
         <title>Hello Navigation</title>
     </head>
 	<body>
-		<composite name="helloTutorial">
+		<composite name="helloNav">
 			<UINavigationController toolbarHidden="YES" navigationBarHidden="NO">
                 <BUXNavigationSegue>
                     <UINavigationItem.navigationItem title="Hello Navigation">
@@ -334,7 +334,7 @@ Until now our entire application had only one page but in reality we probably wa
 	</body>
 </html>
 ```
-[try it!](https://raw.github.com/cloud30/thunder/master/tutorial/helloTutorial.html)
+[try it!](https://raw.github.com/cloud30/thunder/master/tutorial/helloNav.html)
 
 A `UINavigationController` should have one or more `BUXNavigationSegue` children, the first of which will be the root of the stack and be displayed automatically. Any other segue can be presented invoking the present() or presentWithModel() actions. See [Event Reference]() and [Action Reference]() for more information about events and actions.
 
