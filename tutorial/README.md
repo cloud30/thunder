@@ -1,6 +1,6 @@
 ## Getting Started
 
-_Thunder_ is an iOS [app](https://itunes.apple.com/us/app/ishopzine/id725023836?mt=8) that allows to create pixel-perfect mockups of iOS applications using simple HTML-like markup. All you need is a text editor and a web server.
+_Thunder_ is an [iOS app](https://itunes.apple.com/us/app/thunder/id725023836?mt=8) that allows to create pixel-perfect mockups of iOS applications using simple HTML-like markup. All you need is a text editor and a web server.
 
 
 ## Hello World
