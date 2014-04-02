@@ -1,0 +1,33 @@
+<?thunder xhtml ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Hello Fonts</title>
+    </head>
+	<body>
+		<composite name="helloFonts">
+			<JSON.fontNames>{ "fun": "{PartyLetPlain, 24}" }</JSON.fontNames>
+			<UIView backgroundColor="lightpink">
+				<!-- these are iOS 7 Dynamic Type fonts, they change based on user preferences -->
+				<UILabel centerX="_parent" top="50" text="Hello headline" font="headline"/>
+				<UILabel centerX="_parent" top="80" text="Hello body" font="body"/>
+				<UILabel centerX="_parent" top="110" text="Hello subheadline" font="subheadline"/>
+				<UILabel centerX="_parent" top="140" text="Hello footnote" font="footnote"/>
+				<UILabel centerX="_parent" top="170" text="Hello caption1" font="caption1"/>
+				<UILabel centerX="_parent" top="200" text="Hello caption2" font="caption2"/>
+
+				<!-- this is a sample of app-defined logical font names, see above -->
+				<UILabel centerX="_parent" top="230" text="Hello FUN!" font="fun"/>
+
+				<!-- these are the older iOS system fonts provided by UIFont -->
+				<UILabel centerX="_parent" top="280" text="Hello system" font="{system,systemFontSize}"/>
+				<UILabel centerX="_parent" top="310" text="Hello boldsystem small" font="{boldsystem,smallSystemFontSize}"/>
+				<UILabel centerX="_parent" top="340" text="Hello italicsystem label" font="{italicsystem,labelFontSize}"/>
+				<UILabel centerX="_parent" top="380" text="Hello italicsystem button" font="{italicsystem,buttonFontSize}"/>
+
+				<!-- These are dynamically loaded custom fonts -->
+				<!-- Entypo pictograms by Daniel Bruce, thank you! — www.entypo.com -->
+				<UILabel centerX="_parent" top="420" text="&#59171;" font="{@entypo.ttf,50}"/>
+			</UIView>
+		</composite>
+	</body>
+</html>

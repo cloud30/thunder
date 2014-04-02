@@ -32,7 +32,7 @@ Congratulations you got your first mockup running. It's all downhill from here! 
 
 
 ## Properties
-As you can see from Apple's documentation, every property is of a specific type, however in markup everything is a string so it needs to be converted accordingly. For basic types like strings, integers and floats, this happens as you'd expect. For other types, where appplicable, we use Apple's string representation and convert it automatically. Please refer to our [Property Types Reference]() for the correct syntax of each type.
+As you can see from Apple's documentation, every property is of a specific type, however in markup everything is a string so it needs to be converted accordingly. For basic types like strings, integers and floats, this happens as you'd expect. For other types, where appplicable, we use Apple's string representation and convert it automatically.
 Let's refine the label above with additional properties. Create a file named _helloFancy.html_ as follows:
 
 ```xhtml
@@ -52,7 +52,7 @@ Let's refine the label above with additional properties. Create a file named _he
 ```
 [try it!](https://raw.github.com/cloud30/thunder/master/tutorial/helloFancy.html)
 
-In order to provide the most accurate presentation of your application mockup, _Thunder_ displays it in full screen without adding any additional control or toolbar. In order to return to the initial screen so that you can reload the file or load a new one, you can either shake the device or send it temporarily in the background (e.g. double-click the home button and select _Thunder_ again).
+In order to provide the most accurate presentation of your application mockup, _Thunder_ displays it in full screen without adding any additional control or toolbar. In order to exit the mockup and return to the initial screen, you can either shake the device or send it temporarily in the background (e.g. double-click the home button and select _Thunder_ again).
 
 ## Styles
 Just like with HTML, when styling an application a lot of properties need to have the same values. In these cases it helps to externalize these properties in a separate stylesheet. Similarly to CSS classes, _Thunder_ lets you specify style classes in each element and externalize their values in a separate JSON file.
@@ -121,7 +121,7 @@ In the following example we create a container view (which, being the root view,
 ```
 [try it!](https://raw.github.com/cloud30/thunder/master/tutorial/helloLayouts.html)
 
-When using layouts, 2 constraints per axis are normally needed so that size and position are not ambiguous. Some components (like labels and images) provide an intrinsic size. In that case, a single position constraint per axis is sufficient. This is especially useful for labels, which may vary in size when localized. For a list of constraint attributes and full syntax check out the [Layout Reference]().
+When using layouts, 2 constraints per axis are normally needed so that size and position are not ambiguous. Some components (like labels and images) provide an intrinsic size. In that case, a single position constraint per axis is sufficient. This is especially useful for labels, which may vary in size when localized.
 
 
 ## Tables
@@ -223,7 +223,6 @@ In this case we may want to create a table with a template for each cell and the
 [try it!](https://raw.github.com/cloud30/thunder/master/tutorial/countryTable.html)
 
 Similarly to the `style` property we saw before, the `cfg` property in the composite tag refers to a json file in the same location as the html file. Instead of providing each table cell individually as children, we use the `model` property and bind it to the countries array. Each element of the array is then bound to the template speficied by the `defaultCellTmpl` property. In this case, the data of country is bound to the cell's labels.
-This is just scratching the surface of the power of table views. For more advanced features check out our [TableView Reference]().
 
 
 ## Events and Actions
@@ -336,7 +335,7 @@ Until now our entire application had only one page but in reality we probably wa
 ```
 [try it!](https://raw.github.com/cloud30/thunder/master/tutorial/helloNav.html)
 
-A `UINavigationController` should have one or more `BUXNavigationSegue` children, the first of which will be the root of the stack and be displayed automatically. Any other segue can be presented invoking the present() or presentWithModel() actions. See [Event Reference]() and [Action Reference]() for more information about events and actions.
+A `UINavigationController` should have one or more `BUXNavigationSegue` children, the first of which will be the root of the stack and be displayed automatically. Any other segue can be presented invoking the present() or presentWithModel() actions.
 
 ## Putting it all together
 Using the concepts covered so far, we can combine all these sample files together in a single app.

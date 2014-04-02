@@ -22,6 +22,7 @@
                 <BUXNavigationSegue>
                     <UINavigationItem.navigationItem title="Hello Tutorial">
 	                    <UIBarButtonItem.backBarButtonItem title="Home"/>
+	                    <UIBarButtonItem.rightBarButtonItem title="Exit" style="Done" _onPushed="thunder.suspendApp()"/>
 	                </UINavigationItem.navigationItem>
                     <UITableView style="Plain" showSection="NO">
 		                <UITableViewCell.defaultCellTmpl accessoryType="DisclosureIndicator" detailTitle-bind="detailTitle" compName-bind="compName" _onDidSelect="tutorial.presentWithModel($sender)">
@@ -47,6 +48,7 @@
                     <UIView composite-bind="compName" backgroundColor="white"/>
                 </BUXNavigationSegue>
 			</UINavigationController>
+			<BUXThunder id="thunder"/>
 		</composite>
 	</body>
 </html>

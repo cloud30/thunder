@@ -1,0 +1,38 @@
+<?thunder xhtml ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Hello Tab Bar</title>
+    </head>
+	<body>
+		<composite name="helloTabBar">
+			<!-- Ion Icon Copyright (c) 2014 Drifty (http://drifty.com/) -->
+			<JSON.fontNames>{ "ionicons": "{@ionicons.ttf,30}" }</JSON.fontNames>
+		    <UITabBarController>
+		        <BUXTabBarSegue>
+		            <UITabBarItem.tabBarItem title="Catalog" tag="1">
+						<BUXTextImage.image text="&#xf160;" font="ionicons" width="30" height="30"/> 
+					</UITabBarItem.tabBarItem>
+		            <UIView backgroundColor="red"/>
+		        </BUXTabBarSegue>
+		        <BUXTabBarSegue>
+		            <UITabBarItem.tabBarItem title="Search" tag="2">
+						<BUXTextImage.image text="&#xf1da;" font="ionicons" width="30" height="30"/> 
+					</UITabBarItem.tabBarItem>
+		            <UIView backgroundColor="blue"/>
+		        </BUXTabBarSegue>
+		        <BUXTabBarSegue>
+		            <UITabBarItem.tabBarItem title="Cart" tag="3" badgeValue="0">
+						<BUXTextImage.image text="&#xf166;" font="ionicons" width="30" height="30"/> 
+					</UITabBarItem.tabBarItem>
+		            <UIView backgroundColor="yellow"/>
+		        </BUXTabBarSegue>
+		        <BUXTabBarSegue>
+		            <UITabBarItem.tabBarItem title="Info" tag="4">
+						<BUXTextImage.image text="&#xf1a0;" font="ionicons" width="30" height="30"/> 
+					</UITabBarItem.tabBarItem>
+		            <UIView backgroundColor="lightgray"/>
+		        </BUXTabBarSegue>
+		    </UITabBarController>
+		</composite>
+	</body>
+</html>

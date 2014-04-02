@@ -1,0 +1,96 @@
+<?thunder xhtml ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Thunder Dox</title>
+    </head>
+	<body>
+		<composite name="thunderDox">
+			<UINavigationController toolbarHidden="YES" navigationBarHidden="NO">
+                <BUXNavigationSegue>
+                    <UINavigationItem.navigationItem title="Thunder Dox">
+	                    <UIBarButtonItem.backBarButtonItem title="Dox"/>
+	                    <UIBarButtonItem.rightBarButtonItem title="Exit" style="Done" _onPushed="thunder.suspendApp()"/>
+	                </UINavigationItem.navigationItem>
+	            	<UITableView top="_topGuide.bottom" bottom="_bottomGuide.top" left="0" width="_parent" style="Plain" showSection="NO">
+		                <UITableViewCell accessoryType="DisclosureIndicator" _onDidSelect="tagReference.present()">
+		                	<UILabel.textLabel text="Tag Reference"/>
+		                </UITableViewCell>
+		                <UITableViewCell accessoryType="DisclosureIndicator" _onDidSelect="colorReference.present()">
+		                	<UILabel.textLabel text="Color Reference"/>
+		                </UITableViewCell>
+		                <UITableViewCell accessoryType="DisclosureIndicator" _onDidSelect="fontReference.present()">
+		                	<UILabel.textLabel text="Font Reference"/>
+		                </UITableViewCell>
+		            </UITableView>
+                </BUXNavigationSegue>
+
+                <BUXNavigationSegue id="tagReference">
+                    <UINavigationItem.navigationItem title="Thunder Tag Reference"/>
+					<UITableView style="Plain" showSection="NO">
+					    <BUXDox.model type="tagList"/>
+					    <UITableViewCell.defaultCellTmpl>
+					        <UILabel.textLabel text-bind="tagName" font="subheadline" adjustsFontSizeToFitWidth="YES"/>
+					    </UITableViewCell.defaultCellTmpl>
+					    <obj.tmpl>
+						    <UITableViewCell.tagWithDetail accessoryType="DisclosureIndicator" model-bind="" _onDidSelect="tagDetail.presentWithModel($sender.model)">
+						        <UILabel.textLabel text-bind="tagName" font="subheadline" adjustsFontSizeToFitWidth="YES"/>
+						    </UITableViewCell.tagWithDetail>
+					    </obj.tmpl>
+					</UITableView>
+                </BUXNavigationSegue>
+
+                <BUXNavigationSegue id="tagDetail" reuse="NO">
+                    <UINavigationItem.navigationItem title-bind="tagName">
+	                    <UIBarButtonItem.backBarButtonItem title="Index"/>
+	                </UINavigationItem.navigationItem>
+					<UITableView style="Grouped" showSection="YES" model-bind="detail" allowsSelection="NO">
+					    <BUXTableSection.defaultSectionTmpl headerTitle-bind="title" model-bind="items" headerHeight="35"/>
+					    <obj.tmpl>
+						    <UITableViewCell.superClass accessoryType="DisclosureIndicator" superClassDef-bind="superClassDef" _onDidSelect="tagDetail.presentWithModel($sender.superClassDef)">
+						        <UILabel.textLabel text-bind="class" font="subheadline" adjustsFontSizeToFitWidth="YES"/>
+						    </UITableViewCell.superClass>
+						    <UITableViewCell.property>
+						        <UILabel.textLabel text-bind="property" font="subheadline" adjustsFontSizeToFitWidth="YES"/>
+						    </UITableViewCell.property>
+						    <UITableViewCell.msg style="Subtitle">
+						        <UILabel.textLabel text-bind="msg" font="subheadline" adjustsFontSizeToFitWidth="YES"/>
+			                	<UILabel.detailTextLabel text-bind="params" font="caption2" textColor="DodgerBlue" adjustsFontSizeToFitWidth="YES"/>
+						    </UITableViewCell.msg>
+					    </obj.tmpl>
+					</UITableView>
+                </BUXNavigationSegue>
+
+                <BUXNavigationSegue id="colorReference">
+                    <UINavigationItem.navigationItem title="Color Reference"/>
+					<UITableView model-bind="" allowsSelection="NO">
+					    <BUXDox.model type="colorList"/>
+					    <UITableViewCell.defaultCellTmpl backgroundColor-bind="color">
+					        <UILabel.textLabel text-bind="color" textColor-bind="textColor" font="headline"/>
+					    </UITableViewCell.defaultCellTmpl>
+					</UITableView>
+                </BUXNavigationSegue>
+
+                <BUXNavigationSegue id="fontReference">
+                    <UINavigationItem.navigationItem title="Font Reference"/>
+					<UITableView style="Grouped" showSection="YES" model-bind="fonts" allowsSelection="YES">
+					    <BUXDox.model type="fontList"/>
+					    <BUXTableSection.defaultSectionTmpl headerTitle-bind="family" model-bind="fonts" headerHeight="35"/>
+					    <UITableViewCell.defaultCellTmpl accessoryType="DisclosureIndicator" model-bind="" _onDidSelect="fontDetail.presentWithModel($sender.model)">
+					        <UILabel.textLabel text-bind="fontName" font-bind="fontMedium" adjustsFontSizeToFitWidth="YES"/>
+					    </UITableViewCell.defaultCellTmpl>
+					</UITableView>
+                </BUXNavigationSegue>
+
+                <BUXNavigationSegue id="fontDetail" reuse="NO">
+                    <UINavigationItem.navigationItem title-bind="fontName"/>
+					<UIView backgroundColor="ivory">
+				        <UILabel top="_topGuide.bottom" bottom="_bottomGuide.top" left="20" right="_parent - 20" textAlignment="center" textColor="#222222" text="The quick brown fox jumps over the lazy dog! 0123456789" font-bind="fontLarge" adjustsFontSizeToFitWidth="YES" numberOfLines="8"/>
+					</UIView>
+                </BUXNavigationSegue>
+
+			</UINavigationController>
+
+			<BUXThunder id="thunder"/>
+		</composite>
+	</body>
+</html>

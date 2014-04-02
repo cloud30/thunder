@@ -1,0 +1,30 @@
+<?thunder xhtml ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Hello Text Images</title>
+    </head>
+	<body>
+		<composite name="helloTextImages">
+			<UIView backgroundColor="lightyellow">
+				<UIImageView centerX="_parent" top="50">
+					<BUXTextImage.image text="Hello" width="200" height="50"/> 
+				</UIImageView>
+				<UIImageView centerX="_parent" top="100" backgroundColor="green">
+					<BUXTextImage.image text="Hello" width="200" height="50" font="{PartyLetPlain, 24}"/> 
+				</UIImageView>
+				<UIImageView centerX="_parent" top="150">
+					<BUXTextImage.image text="Hello" width="200" height="50" font="{Helvetica, 24}" foregroundColor="red" backgroundColor="gold"/> 
+				</UIImageView>
+				<UIImageView centerX="_parent" top="200">
+					<BUXTextImage.image text="Hello" width="200" height="50" font="{Helvetica, 24}" foregroundColor="red" backgroundColor="gold" effect="LetterpressStyle"/> 
+				</UIImageView>
+				<UIImageView centerX="_parent" top="250">
+					<BUXTextImage.image text="Hello" width="200" height="50" font="{Helvetica, 48}" foregroundColor="red" backgroundColor="gold" shadowColor="black" shadowOffset="{1,1}" shadowBlurRadius="2"/> 
+				</UIImageView>
+				<UIImageView centerX="_parent" top="300">
+					<BUXTextImage.image text="Hello" width="200" height="50" font="{Helvetica, 24}" foregroundColor="red" backgroundColor="gold" baselineOffset="30" /> 
+				</UIImageView>
+			</UIView>
+		</composite>
+	</body>
+</html>
